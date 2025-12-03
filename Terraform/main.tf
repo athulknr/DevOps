@@ -8,16 +8,15 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ca-central-1"
 }
 
-resource "aws_instance" "demo-instance" {
-  ami           = "ami-0fa3fe0fa7920f68e"
-  instance_type = "t3.micro"
+resource "aws_instance" "demo" {
+  ami           = "ami-09e7fb5d565f22127"
+  instance_type = "t3.small" #change instance type
 
   tags = {
-    Name = "demo"
-    Environment = "Dev"
+    Name = "Demo"
   }
 }
 
