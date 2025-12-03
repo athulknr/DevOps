@@ -13,11 +13,10 @@ provider "aws" {
 
 resource "aws_instance" "demo" {
   ami           = "ami-09e7fb5d565f22127"
-  instance_type = "t3.small" #change instance type
+  instance_type = "t3.small"  #change instance type
 
   tags = {
-    Name = "Demo"
+    Name = "demo"
   }
 }
-
 
