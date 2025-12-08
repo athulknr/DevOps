@@ -7,8 +7,8 @@ terraform {
   }
 }
 
-##Metadata
-######### Count #########
+###### Meta arguments ######
+####### Count #######
 
 provider "aws" {
   region = "ap-south-1"
@@ -70,3 +70,8 @@ resource "aws_subnet" "sub1" {
     Env  = "dev"
   }
 }
+
+############# Lifecycle ##############
+###### create_before_destroy ######
+
+
