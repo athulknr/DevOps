@@ -44,3 +44,29 @@ resource "aws_s3_bucket" "buckets" {
 
   bucket = "${each.key}-bucket-${random_id.suffix.hex}"
 }
+
+
+############## Depend on ##############
+
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "main-vpc"
+    Env  = "dev"
+  }
+}
+
+resource "aws_subnet" "sub1" {
+  cidr_block = "10.0.1.0/24"
+  vpc_id     = aws_vpc.main.id
+
+  depends_on = [
+    aws_vpc.main
+  ]
+
+  tags = {
+    Name = "subnet-1"
+    Env  = "dev"
+  }
+}
