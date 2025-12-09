@@ -71,17 +71,6 @@ resource "aws_subnet" "sub1" {
   }
 }
 
-############# Lifecycle ##############
-###### prevent_destroy ######
-
-resource "aws_s3_bucket" "logs" {
-  bucket = "company-logs"
-
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
 
 
 
