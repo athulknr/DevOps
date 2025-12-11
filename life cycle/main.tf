@@ -13,7 +13,7 @@ provider "aws" {
 
 resource "aws_instance" "my_ec2" {
   ami           = var.ami
-  instance_type = var.insta
+  instance_type = var.type
   subnet_id     = var.sub
   associate_public_ip_address = true
   lifecycle {
@@ -24,16 +24,3 @@ resource "aws_instance" "my_ec2" {
   }
 }
 
-output "instance_id" {
-  value = aws_instance.my_ec2.id
-}
-output "public_ip" {
-  value = aws_instance.my_ec2.public_ip
-}
-
-output "instance_arn" {
-  value = aws_instance.my_ec2.arn
-}
-output "private_ip" {
-  value = aws_instance.my_ec2.private_ip
-}
