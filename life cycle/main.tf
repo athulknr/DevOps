@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region = "ap-south-1" ###Mumbai
 }
 
 resource "aws_instance" "my_ec2" {
@@ -23,4 +23,3 @@ resource "aws_instance" "my_ec2" {
     Name = "instance-demo"
   }
 }
-
